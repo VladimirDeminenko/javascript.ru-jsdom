@@ -23,8 +23,8 @@ describe("Numbers", function () {
             assert.equal(0, sum('', ''));
         });
 
-        it("суммирует пять различных чисел и строк", function () {
-            assert.equal(93, sum(-25, '25', '', 36, 57));
+        it("суммирует пять целых чисел и строк", function () {
+            assert.equal(32, sum(-25, '36', '42', -78, 57));
         });
 
         it("суммирует нечисловые значения", function () {

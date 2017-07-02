@@ -45,4 +45,10 @@ describe("Strings", function() {
 
     });
 
+    describe("4. extractCurrencyValue()", function() {
+        it("for the string $120 returns the number 120", function() {
+            assert.strictEqual(120, extractCurrencyValue('$120'));
+        });
+    });
+
 });

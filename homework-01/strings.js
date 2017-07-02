@@ -7,7 +7,7 @@
 'use strict';
 
 function ucFirst(str) {
-    let result = `${str}`.trim();
+    let result = `${str}`;
 
     if (result) {
         result = `${result[0].toUpperCase()}${result.substring(1)}`;
@@ -39,4 +39,8 @@ function truncate(str, maxLength) {
     }
 
     return `${str.substring(0, maxLength - 1)}…`;
+}
+
+function extractCurrencyValue(value) {
+    return Number(value.substring(1));
 }
