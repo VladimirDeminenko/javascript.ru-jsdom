@@ -1,46 +1,49 @@
 /**
- * @file strings.js
+ * @file numbers.js
  * @author Vladimir Deminenko
  * @date 01.07.2017
  */
 
 'use strict';
 
-function ucFirst(str) {
-    let result = `${str}`;
+function sum() {
+    let result = 0;
 
-    if (result) {
-        result = `${result[0].toUpperCase()}${result.substring(1)}`;
+    for (let i = 0; i < arguments.length; i++) {
+        result += +arguments[i];
     }
 
     return result;
 }
 
-function checkSpam(str) {
-    const DICTIONARY = [
-        'viagra',
-        'xxx'
-    ];
+function getDecimal(value) {
+    let valStr = `${value}`.trim();
 
-    const TEST_VALUE = str.trim().toLowerCase();
-
-    for (let i = 0; i < DICTIONARY.length; i++) {
-        if (~TEST_VALUE.indexOf(DICTIONARY[i])) {
-            return true;
-        }
+    if (valStr === '' || !~valStr.indexOf('.')) {
+        return 0;
     }
 
-    return false;
+    valStr = valStr.replace(/^.*\./, '.');
+
+    return +valStr;
 }
 
-function truncate(str, maxLength) {
-    if (maxLength >= str.length) {
-        return str;
+function fib(n) {
+    let a = 1;
+    let b = 0;
+    let x;
+
+    for (let i = 0; i < n; i++) {
+        x = a + b;
+        a = b;
+        b = x;
     }
 
-    return `${str.substring(0, maxLength - 1)}…`;
+    return b;
 }
 
-function extractCurrencyValue(value) {
-    return Number(value.substring(1));
+function fibBinet(n) {
+    const SQRT5 = Math.sqrt(5);
+
+    return Math.round(Math.pow((1 + SQRT5) / 2, n) / SQRT5);
 }

@@ -42,5 +42,5 @@ function truncate(str, maxLength) {
 }
 
 function extractCurrencyValue(value) {
-    return Number(value.substring(1));
+    return Number(`${value}`.substring(1));
 }
