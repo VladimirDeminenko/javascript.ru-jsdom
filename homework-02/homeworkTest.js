@@ -212,7 +212,7 @@ describe("getMaxSubSum", function () {
 describe("addClass", function () {
 
     it("добавляет класс, которого нет", function () {
-        var obj = {
+        let obj = {
             className: 'open menu'
         };
         addClass(obj, 'new');
@@ -222,17 +222,20 @@ describe("addClass", function () {
     });
 
     it("не добавляет класс, который уже есть", function () {
-        var obj = {
+        let obj = {
             className: 'open menu'
         };
+
+        addClass(obj, 'menu');
         addClass(obj, 'open');
+
         assert.deepEqual(obj, {
             className: 'open menu'
         });
     });
 
     it("не добавляет лишних пробелов, который уже есть", function () {
-        var obj = {
+        let obj = {
             className: ''
         };
         addClass(obj, 'open');
@@ -246,7 +249,7 @@ describe("addClass", function () {
 describe("removeClass", function () {
 
     it("ничего не делает, если класса нет", function () {
-        var obj = {
+        let obj = {
             className: 'open menu'
         };
         removeClass(obj, 'new');
@@ -256,7 +259,7 @@ describe("removeClass", function () {
     });
 
     it("не меняет пустое свойство", function () {
-        var obj = {
+        let obj = {
             className: ''
         };
         removeClass(obj, 'new');
@@ -266,7 +269,7 @@ describe("removeClass", function () {
     });
 
     it("удаляет класс, не оставляя лишних пробелов", function () {
-        var obj = {
+        let obj = {
             className: 'open menu'
         };
         removeClass(obj, 'open');
@@ -276,7 +279,7 @@ describe("removeClass", function () {
     });
 
     it("если класс один и он удалён, то результат - пустая строка", function () {
-        var obj = {
+        let obj = {
             className: "menu"
         };
         removeClass(obj, 'menu');
@@ -286,7 +289,7 @@ describe("removeClass", function () {
     });
 
     it("удаляет класс из середины списка", function () {
-        var obj = {
+        let obj = {
             className: "open menu now"
         };
         removeClass(obj, 'menu');
@@ -296,7 +299,7 @@ describe("removeClass", function () {
     });
 
     it("удаляет повторяющийся класс из середины списка", function () {
-        var obj = {
+        let obj = {
             className: "open menu menu zero"
         };
         removeClass(obj, 'menu');
@@ -330,19 +333,19 @@ describe("camelize", function () {
 describe("filterRangeInPlace", function () {
 
     it("меняет массив, оставляя только значения из диапазона", function () {
-        var arr = [5, 3, 8, 1, -3, 16, -27, 3, 2, 4, -5];
+        let arr = [5, 3, 8, 1, -3, 16, -27, 3, 2, 4, -5];
         filterRangeInPlace(arr, 1, 4);
         assert.deepEqual(arr, [3, 1, 3, 2, 4]);
     });
 
     it("неверный диапазон", function () {
-        var arr = [5, 3, 8, 1, -3, 16, -27, 3, 2, 4, -5];
+        let arr = [5, 3, 8, 1, -3, 16, -27, 3, 2, 4, -5];
         filterRangeInPlace(arr, 4, 1);
         assert.deepEqual(arr, []);
     });
 
     it("пустой массив", function () {
-        var arr = [];
+        let arr = [];
         filterRangeInPlace(arr, 1, 4);
         assert.deepEqual(arr, []);
     });
@@ -358,9 +361,9 @@ function intersection(arr1, arr2) {
 describe("aclean", function () {
 
     it("содержит ровно по 1 слову из каждого набора анаграмм", function () {
-        var arr = ["воз", "киборг", "корсет", "зов", "гробик", "костер", "сектор"];
+        let arr = ["воз", "киборг", "корсет", "зов", "гробик", "костер", "сектор"];
 
-        var result = aclean(arr);
+        let result = aclean(arr);
         assert.equal(result.length, 3);
 
         // assert.equal(intersection(result, ["гробик", "киборг"]).length, 1);
@@ -370,7 +373,7 @@ describe("aclean", function () {
     });
 
     it("не различает регистр символов", function () {
-        var arr = ["воз", "ЗОВ"];
+        let arr = ["воз", "ЗОВ"];
         assert.equal(aclean(arr).length, 1);
     });
 
@@ -378,7 +381,7 @@ describe("aclean", function () {
 
 describe("unique", function () {
     it("убирает неуникальные элементы из массива", function () {
-        var strings = ["кришна", "кришна", "харе", "харе",
+        let strings = ["кришна", "кришна", "харе", "харе",
             "харе", "харе", "кришна", "кришна", "8-()"
         ];
 
@@ -386,7 +389,7 @@ describe("unique", function () {
     });
 
     it("не изменяет исходный массив", function () {
-        var strings = ["кришна", "кришна", "харе", "харе"];
+        let strings = ["кришна", "кришна", "харе", "харе"];
         unique(strings);
         assert.sameMembers(strings, ["кришна", "кришна", "харе", "харе"]);
     });

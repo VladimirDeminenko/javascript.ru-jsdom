@@ -155,7 +155,7 @@ function getMaxSubSum(arr) {
 function addClass(obj, cls) {
     let classes = obj.className.split(' ');
 
-    if (classes.indexOf(cls)) {
+    if (!~classes.indexOf(cls)) {
         classes.push(cls);
     }
 
