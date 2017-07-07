@@ -71,3 +71,10 @@
 
 
 На практике эти части не так чтобы резко отделены друг от друга, переход между ними плавный. Продвинутые темы используют элементы предыдущих.
+
+
+## Homeworks
+
+- [homework-01](http://plnkr.co/edit/KnSEt4ygUZgg44X09mhs?p=preview)
+- [homework-02](http://plnkr.co/edit/tUK3pcPQXtBzH5RqgyYC?p=preview)
+- [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)

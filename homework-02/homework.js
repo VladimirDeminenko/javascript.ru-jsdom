@@ -6,15 +6,19 @@
 
 'use strict';
 
-const Singleton = (function () {
-    let instance = null;
+let Singleton = (function () {
+    let instance;
 
-    return function () {
-        if (!instance) {
-            instance = this;
+    return function Singleton () {
+        if (instance) {
+            return instance;
         }
 
-        return instance;
+        if (this && this.constructor === Singleton) {
+            instance = this;
+        } else {
+            return new Singleton();
+        }
     }
 })();
 
