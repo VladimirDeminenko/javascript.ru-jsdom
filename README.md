@@ -75,6 +75,6 @@
 
 ## Homeworks
 
-- [homework-01](http://plnkr.co/edit/KnSEt4ygUZgg44X09mhs?p=preview)
+- [homework-01](http://plnkr.co/edit/jUtyX2oZzH2L2fd2Pu1a?p=preview)
 - [homework-02](http://plnkr.co/edit/tUK3pcPQXtBzH5RqgyYC?p=preview)
 - [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
