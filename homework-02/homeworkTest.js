@@ -178,4 +178,8 @@ describe("getMaxSubSum", function() {
     it("maximal subsum of [-1, -2] equals 0", function() {
         assert.equal(0, getMaxSubSum([-1, -2]));
     });
+
+    it("maximal subsum of [100, -9, 2, -3, 15] equals 105", function() {
+        assert.equal(105, getMaxSubSum([100, -9, 2, -3, 15]));
+    });
 });

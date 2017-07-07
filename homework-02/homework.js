@@ -143,22 +143,10 @@ function sumOfPrimeNumbersTo(n) {
 function getMaxSubSum(arr) {
     let result = 0;
     let subSum = 0;
-    let value;
 
     for (let i = 0; i < arr.length; i++) {
-        value = arr[i];
-
-        if (value < 0) {
-            subSum = 0;
-
-            continue;
-        }
-
-        subSum += value;
-
-        if (subSum > result) {
-            result = subSum;
-        }
+        subSum = Math.max(0, subSum + arr[i]);
+        result = Math.max(subSum, result);
     }
 
     return result;
