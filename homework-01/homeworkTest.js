@@ -8,27 +8,27 @@ describe("Numbers", function () {
 
     describe("1. sum()", function () {
         it("суммирует два числа", function () {
-            assert.equal(18, sum(5, 13));
+            assert.equal(18, closureSum(5, 13));
         });
 
         it("суммирует строку и число", function () {
-            assert.equal(-30, sum('-55', 25));
+            assert.equal(-30, closureSum('-55', 25));
         });
 
         it("суммирует две строки", function () {
-            assert.equal(-5, sum('-255', '250'));
+            assert.equal(-5, closureSum('-255', '250'));
         });
 
         it("суммирует две пустые строки", function () {
-            assert.equal(0, sum('', ''));
+            assert.equal(0, closureSum('', ''));
         });
 
         it("суммирует пять целых чисел и строк", function () {
-            assert.equal(32, sum(-25, '36', '42', -78, 57));
+            assert.equal(32, closureSum(-25, '36', '42', -78, 57));
         });
 
         it("суммирует нечисловые значения", function () {
-            assert(isNaN(sum(-25, 'x', '', {}, 57)));
+            assert(isNaN(closureSum(-25, 'x', '', {}, 57)));
         });
     });
 

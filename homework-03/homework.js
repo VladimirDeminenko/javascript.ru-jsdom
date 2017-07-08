@@ -63,9 +63,9 @@ function formatRelativeDate(date) {
     if (relativeDate < ONE_SECOND_LENGTH) {
         result = 'только что';
     } else if (relativeDate < ONE_MINUTE_LENGTH) {
-        result = `${relativeDate / ONE_SECOND_LENGTH} сек. назад`;
+        result = `${Math.floor(relativeDate / ONE_SECOND_LENGTH)} сек. назад`;
     } else if (relativeDate < ONE_HOUR_LENGTH) {
-        result = `${relativeDate / ONE_MINUTE_LENGTH} мин. назад`;
+        result = `${Math.floor(relativeDate / ONE_MINUTE_LENGTH)} мин. назад`;
     } else {
         result = date
             .toLocaleString("ru", options)
@@ -73,4 +73,88 @@ function formatRelativeDate(date) {
     }
 
     return result;
+}
+
+function closureSum(b) {
+    return function (a) {
+        return +a + +b;
+    }
+}
+
+function makeBuffer() {
+    let buffer = [];
+
+    let cleanedBuffer = function (value) {
+        if (arguments.length === 0) {
+            return buffer.join('');
+        }
+
+        buffer.push(`${value}`);
+    };
+
+    cleanedBuffer.clear = function () {
+        buffer.length = 0;
+    };
+
+    return cleanedBuffer;
+}
+
+function byField(fieldName) {
+    let sortByAge = function (user1, user2) {
+        return user1.age - user2.age;
+    };
+
+    let sortByName = function (user1, user2) {
+        if (user1.name > user2.name) {
+            return 1;
+        }
+
+        return -1;
+    };
+
+    if ('age' === fieldName.toLowerCase()) {
+        return sortByAge;
+    }
+
+    return sortByName;
+}
+
+function inArray(arr) {
+    return function (value) {
+        return !!~arr.indexOf(value);
+    }
+}
+
+function inBetween(a, b) {
+    return function (value) {
+        return value >= a && value <= b;
+    }
+}
+
+function filter(arr, func) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let value = arr[i];
+
+        if (func(value)) {
+            result.push(value);
+        }
+    }
+
+    return result;
+}
+
+function makeArmy() {
+    let shooters = [];
+
+    for (let i = 0; i < 10; i++) {
+        let shooter = function () {
+            return i;
+        };
+
+        shooters.push(shooter);
+    }
+
+    return shooters;
 }
