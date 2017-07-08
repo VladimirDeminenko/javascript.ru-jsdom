@@ -58,21 +58,19 @@ function formatRelativeDate(date) {
 
     const relativeDate = new Date() - date;
 
-    let result;
-
     if (relativeDate < ONE_SECOND_LENGTH) {
-        result = 'только что';
-    } else if (relativeDate < ONE_MINUTE_LENGTH) {
-        result = `${Math.floor(relativeDate / ONE_SECOND_LENGTH)} сек. назад`;
-    } else if (relativeDate < ONE_HOUR_LENGTH) {
-        result = `${Math.floor(relativeDate / ONE_MINUTE_LENGTH)} мин. назад`;
-    } else {
-        result = date
-            .toLocaleString("ru", options)
-            .replace(',', '');
+        return 'только что';
     }
 
-    return result;
+    if (relativeDate < ONE_MINUTE_LENGTH) {
+        return `${Math.floor(relativeDate / ONE_SECOND_LENGTH)} сек. назад`;
+    }
+
+    if (relativeDate < ONE_HOUR_LENGTH) {
+        return `${Math.floor(relativeDate / ONE_MINUTE_LENGTH)} мин. назад`;
+    }
+
+    return date.toLocaleString("ru", options).replace(',', '');
 }
 
 function closureSum(b) {
