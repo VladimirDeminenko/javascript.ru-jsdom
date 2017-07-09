@@ -120,13 +120,13 @@ function byField(fieldName) {
 function inArray(arr) {
     return function (value) {
         return !!~arr.indexOf(value);
-    }
+    };
 }
 
 function inBetween(a, b) {
     return function (value) {
         return value >= a && value <= b;
-    }
+    };
 }
 
 function filter(arr, func) {
