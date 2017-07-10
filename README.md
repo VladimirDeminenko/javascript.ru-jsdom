@@ -15,6 +15,9 @@
     - Инструменты разработки, отладка в браузерах.
     - Автоматизированное тестирование, инструменты и их применение.
     - Современный стандарт ES-2017, его кросс-браузерное использование сейчас.
+    - Homeworks:
+        - [homework-01](http://plnkr.co/edit/jUtyX2oZzH2L2fd2Pu1a?p=preview)
+        - [homework-02](http://plnkr.co/edit/tUK3pcPQXtBzH5RqgyYC?p=preview)
 
 2. **Более глубокое понимание языка.**
 \
@@ -25,6 +28,9 @@
     - Контекст this в деталях.
     - Форвардинг, одалживание и делегирование функций.
     - Прототипы, классы, прототипное и функциональное ООП, детали использования.
+    - Homeworks:
+        - [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
+            - [homework-extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
 
 
 По окончанию первой части курса вы свободно пользуетесь языком JavaScript, с учётом его особенностей и новых возможностей стандарта ES-2015. Мы улучшим эти навыки в последующих частях курса.
@@ -72,10 +78,3 @@
 
 На практике эти части не так чтобы резко отделены друг от друга, переход между ними плавный. Продвинутые темы используют элементы предыдущих.
 
-
-## Homeworks
-
-- [homework-01](http://plnkr.co/edit/jUtyX2oZzH2L2fd2Pu1a?p=preview)
-- [homework-02](http://plnkr.co/edit/tUK3pcPQXtBzH5RqgyYC?p=preview)
-- [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
-    - [homework-extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
