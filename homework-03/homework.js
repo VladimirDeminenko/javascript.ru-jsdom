@@ -1,5 +1,5 @@
 /**
- * @file singleton.js
+ * @file homework.js
  * @author Vladimir Deminenko
  * @date 07.07.2017
  */
@@ -156,3 +156,22 @@ function makeArmy() {
 
     return shooters;
 }
+
+const plusTwo = function () {
+    return 2 + this.valueOf();
+};
+
+const plusThree = function () {
+    return 3 + this.valueOf();
+};
+
+Number.prototype.PlusThree = plusThree;
+Number.prototype.PlusTwo = plusTwo;
+
+Object.defineProperty(Number.prototype, "plus2", {
+    get: plusTwo
+});
+
+Object.defineProperty(Number.prototype, "plus3", {
+    get: plusThree
+});

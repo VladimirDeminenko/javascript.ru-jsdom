@@ -1,5 +1,5 @@
 /**
- * @file singleton.js
+ * @file homework.js
  * @author Vladimir Deminenko
  * @date 04.07.2017
  */
