@@ -157,13 +157,14 @@ function makeArmy() {
     return shooters;
 }
 
-const plusTwo = function () {
-    return 2 + this.valueOf();
+const Plus = function(n) {
+    return function() {
+        return n + this.valueOf();
+    };
 };
 
-const plusThree = function () {
-    return 3 + this.valueOf();
-};
+const plusTwo = new Plus(2);
+const plusThree = new Plus(3);
 
 Number.prototype.PlusThree = plusThree;
 Number.prototype.PlusTwo = plusTwo;

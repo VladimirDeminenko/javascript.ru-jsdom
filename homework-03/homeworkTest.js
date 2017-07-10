@@ -340,7 +340,7 @@ describe("дополнительные задания", function () {
         });
     });
 
-    describe("- всё в одну кучу!", function () {
+    describe("- всё в кучу!", function () {
         it("(+'6').PlusTwo().plus3.plus2.PlusThree().plus2 = 18", function () {
             assert.equal((+'6').PlusTwo().plus3.plus2.PlusThree().plus2, 18);
         });
