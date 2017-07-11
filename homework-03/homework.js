@@ -75,7 +75,7 @@ function formatRelativeDate(date) {
 
 function closureSum(b) {
     return function (a) {
-        return +a + +b;
+        return +a + (+b);
     }
 }
 
@@ -157,8 +157,8 @@ function makeArmy() {
     return shooters;
 }
 
-const Plus = function(n) {
-    return function() {
+const Plus = function (n) {
+    return function () {
         return n + this.valueOf();
     };
 };
