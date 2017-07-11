@@ -74,15 +74,15 @@ function formatRelativeDate(date) {
 }
 
 function closureSum(b) {
-    return function (a) {
+    return function(a) {
         return +a + (+b);
-    }
+    };
 }
 
 function makeBuffer() {
     let buffer = [];
 
-    let cleanedBuffer = function (value) {
+    let cleanedBuffer = function(value) {
         if (arguments.length === 0) {
             return buffer.join('');
         }
@@ -90,7 +90,7 @@ function makeBuffer() {
         buffer.push(`${value}`);
     };
 
-    cleanedBuffer.clear = function () {
+    cleanedBuffer.clear = function() {
         buffer.length = 0;
     };
 
@@ -98,11 +98,11 @@ function makeBuffer() {
 }
 
 function byField(fieldName) {
-    let sortByAge = function (user1, user2) {
+    let sortByAge = function(user1, user2) {
         return user1.age - user2.age;
     };
 
-    let sortByName = function (user1, user2) {
+    let sortByName = function(user1, user2) {
         if (user1.name > user2.name) {
             return 1;
         }
@@ -118,13 +118,13 @@ function byField(fieldName) {
 }
 
 function inArray(arr) {
-    return function (value) {
+    return function(value) {
         return !!~arr.indexOf(value);
     };
 }
 
 function inBetween(a, b) {
-    return function (value) {
+    return function(value) {
         return value >= a && value <= b;
     };
 }
@@ -144,35 +144,17 @@ function filter(arr, func) {
 }
 
 function makeArmy() {
+    function createShooter(shooter) {
+        return function() {
+            return shooter;
+        }
+    }
+
     let shooters = [];
 
     for (let i = 0; i < 10; i++) {
-        let shooter = function () {
-            return i;
-        };
-
-        shooters.push(shooter);
+        shooters.push(createShooter(i));
     }
 
     return shooters;
 }
-
-const Plus = function (n) {
-    return function () {
-        return n + this.valueOf();
-    };
-};
-
-const plusTwo = new Plus(2);
-const plusThree = new Plus(3);
-
-Number.prototype.PlusThree = plusThree;
-Number.prototype.PlusTwo = plusTwo;
-
-Object.defineProperty(Number.prototype, "plus2", {
-    get: plusTwo
-});
-
-Object.defineProperty(Number.prototype, "plus3", {
-    get: plusThree
-});
