@@ -23,5 +23,5 @@ function Calculator() {
         mul: () => {
             return this.a * this.b;
         }
-    }
+    };
 }
