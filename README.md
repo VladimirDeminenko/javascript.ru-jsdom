@@ -31,6 +31,8 @@
     - Homeworks:
         - [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
             - [extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
+        - [homework-04](http://plnkr.co/edit/jtqzlylHCi0oFHeVpO99?p=preview)
+            
 
 
 По окончанию первой части курса вы свободно пользуетесь языком JavaScript, с учётом его особенностей и новых возможностей стандарта ES-2015. Мы улучшим эти навыки в последующих частях курса.
