@@ -7,21 +7,43 @@
 'use strict';
 
 function Calculator() {
-    this.a = 0;
-    this.b = 0;
+    let a = 0;
+    let b = 0;
 
-    return {
-        read: () => {
-            this.a = +prompt('first number:', '0');
-            this.b = +prompt('second number:', '0');
-        },
+    this.read = () => {
+        a = +prompt('first number:', '0');
+        b = +prompt('second number:', '0');
+    };
 
-        sum: () => {
-            return this.a + this.b;
-        },
+    this.sum = () => {
+        return a + b;
+    };
 
-        mul: () => {
-            return this.a * this.b;
-        }
+    this.mul = () => {
+        return a * b;
+    };
+}
+
+function Ladder() {
+    if (typeof this === 'undefined') {
+        throw new TypeError('Cannot call a class as a function');
+    }
+
+    let step = 0;
+
+    this.up = () => {
+        step++;
+
+        return this;
+    };
+
+    this.down = () => {
+        step--;
+
+        return this;
+    };
+
+    this.showStep = () => {
+        return step;
     };
 }
