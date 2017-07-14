@@ -56,8 +56,6 @@ function multiClosureSum(a = 0) {
     let sum = +a;
 
     const f = (b = 0) => {
-        debugger;
-
         sum += +b;
 
         return f;
