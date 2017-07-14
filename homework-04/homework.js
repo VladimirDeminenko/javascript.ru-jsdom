@@ -47,3 +47,21 @@ function Ladder() {
         return step;
     };
 }
+
+function closureSum(b = 0) {
+    return (a = 0) => +a + (+b);
+}
+
+function multiClosureSum(a = 0) {
+    let sum = +a;
+
+    const f = (b = 0) => {
+        sum += +b;
+
+        return f;
+    };
+
+    f.toString = () => sum;
+
+    return f;
+}
