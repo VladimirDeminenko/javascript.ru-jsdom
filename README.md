@@ -32,6 +32,8 @@
         - [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
             - [extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
         - [homework-04](http://plnkr.co/edit/jtqzlylHCi0oFHeVpO99?p=preview)
+            - [test of an exception](http://plnkr.co/edit/ptSoFFDS6vD3DVYCViNL?p=preview)
+        - [homework-05](http://plnkr.co/edit/5XwlxkoOQu2I0TTUP5pK?p=preview)
             
 
 

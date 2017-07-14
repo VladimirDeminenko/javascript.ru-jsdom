@@ -35,8 +35,8 @@ function createFormula(str, operations = []) {
 
         if (typeof arg1 === 'number'
             && typeof arg2 === 'number'
-            && (op === '+' || op === '-' || operations.includes(op))
-        ) {
+            && (op === '+' || op === '-' || operations.includes(op))) {
+
             result = {
                 arg1,
                 arg2,
@@ -125,9 +125,7 @@ function Ladder() {
         return this;
     };
 
-    this.showStep = () => {
-        return step;
-    };
+    this.showStep = () => step;
 }
 
 function closureSum(b = 0) {

@@ -4,6 +4,9 @@
  * @date 11.07.2017
  */
 
+
+"use strict";
+
 describe("calculator", function () {
     let calculator;
 
@@ -143,8 +146,8 @@ describe("chaining", function () {
         assert.throws(Ladder, TypeError);
     });
 
-    it(`${testMessage} with the message "${typeErrorMessage}"`, function () {
-        assert.equal((assert.throws(Ladder, TypeError).message), typeErrorMessage);
+    it(`${testMessage} with the message "${typeErrorMessage}"`, function() {
+        assert.throws(Ladder, TypeError, typeErrorMessage);
     });
 });
 
