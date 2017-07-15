@@ -24,60 +24,37 @@ function Calculator() {
     };
 }
 
-function createFormula(str, operations = []) {
-    let result = null;
-    let values = str.split(' ');
-
-    if (values.length === 3) {
-        let arg1 = +values[0];
-        let arg2 = +values[2];
-        let op = values[1];
-
-        if (typeof arg1 === 'number'
-            && typeof arg2 === 'number'
-            && (op === '+' || op === '-' || operations.includes(op))) {
-
-            result = {
-                arg1,
-                arg2,
-                op
-            };
-        }
+function getSmartCalculatorMethod(str = null, methods = {}) {
+    if (!str) {
+        throw new TypeError('Incorrect use of a method');
     }
 
-    return result;
-}
+    let values = str.split(' ');
+    let arg1 = +values[0];
+    let arg2 = +values[2];
+    let op = values[1];
 
-function SimpleCalculator() {
-    this.calculate = (str = null) => {
-        let formula = createFormula(str);
+    if (isNaN(arg1) || isNaN(arg2) || !methods[op]) {
+        return null;
+    }
 
-        if (formula) {
-            return eval(`${formula.arg1} ${formula.op} ${formula.arg2}`);
-        }
-
-        throw new EvalError('calculate error');
-    };
+    return {arg1, arg2, op};
 }
 
 function SmartCalculator() {
-    let methodNames = [];
-    let methods = [];
+    const methods = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b
+    };
 
-    this.calculate = (str = null) => {
-        let formula = createFormula(str, methodNames);
+    this.calculate = (str) => {
+        let method = getSmartCalculatorMethod(str, methods);
 
-        if (formula) {
-            let idx = methodNames.indexOf(formula.op);
-
-            if (idx >= 0) {
-                let func = methods[idx];
-
-                return func(formula.arg1, formula.arg2);
-            }
+        if (method) {
+            return methods[method.op](method.arg1, method.arg2);
         }
 
-        throw new EvalError('calculate error');
+        throw new TypeError('calculate error');
     };
 
     this.addMethod = (methodName = null, func = null) => {
@@ -86,15 +63,12 @@ function SmartCalculator() {
             || !func
             || typeof func !== 'function') {
 
-            throw new Error('addMethod() error');
+            throw new TypeError('addMethod() error');
         }
 
-        if (methodNames.includes(methodName)) {
-            return;
+        if (!methods[methodName]) {
+            methods[methodName] = func;
         }
-
-        methodNames.push(methodName);
-        methods.push(func);
     };
 }
 

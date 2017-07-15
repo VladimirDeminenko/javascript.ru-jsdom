@@ -34,11 +34,11 @@ describe("calculator", function () {
     });
 });
 
-describe("simple calculator", function () {
+describe("smart calculator", function () {
     let calculator;
 
     before(function () {
-        calculator = new SimpleCalculator();
+        calculator = new SmartCalculator();
     });
 
     after(function () {
@@ -51,18 +51,6 @@ describe("simple calculator", function () {
 
     it("calculate(34 - 12) = 22", function () {
         assert.equal(calculator.calculate("34 - 12"), 22);
-    });
-});
-
-describe("smart calculator", function () {
-    let calculator;
-
-    before(function () {
-        calculator = new SmartCalculator();
-    });
-
-    after(function () {
-        calculator = null;
     });
 
     it("добавили умножение: calculate(2 * 3) = 6", function () {
@@ -79,6 +67,10 @@ describe("smart calculator", function () {
         });
 
         assert.equal(calculator.calculate("2 ** 3"), 8);
+    });
+
+    it("calculate() throws an TypeError exception", function () {
+        assert.throws(calculator.calculate, TypeError, 'Incorrect use of a method');
     });
 });
 
@@ -146,7 +138,7 @@ describe("chaining", function () {
         assert.throws(Ladder, TypeError);
     });
 
-    it(`${testMessage} with the message "${typeErrorMessage}"`, function() {
+    it(`${testMessage} with the message "${typeErrorMessage}"`, function () {
         assert.throws(Ladder, TypeError, typeErrorMessage);
     });
 });
