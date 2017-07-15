@@ -4,9 +4,6 @@
  * @date 11.07.2017
  */
 
-
-"use strict";
-
 describe("calculator", function () {
     let calculator;
 
