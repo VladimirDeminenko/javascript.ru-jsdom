@@ -138,6 +138,42 @@ describe("chaining", function () {
     it(`${testMessage} with the message "${typeErrorMessage}"`, function () {
         assert.throws(Ladder, TypeError, typeErrorMessage);
     });
+
+    describe("тестирование нескольких объектов Ladder", function () {
+        let ladder1;
+        let ladder2;
+
+        beforeEach(function () {
+            ladder1 = new Ladder();
+            ladder2 = new Ladder();
+            ladder2.up = ladder1.up;
+        });
+
+        afterEach(function () {
+            ladder2 = null;
+            ladder1 = null;
+        });
+
+        it("ladder1.up(); ladder1.showStep() = 1", function() {
+            ladder1.up();
+            assert.equal(ladder1.showStep(), 1);
+        });
+
+        it("ladder1.up(); ladder2.showStep() = 0", function() {
+            ladder1.up();
+            assert.equal(ladder2.showStep(), 0);
+        });
+
+        it("ladder2.up(); ladder1.showStep() = 1", function() {
+            ladder2.up();
+            assert.equal(ladder1.showStep(), 1);
+        });
+
+        it("ladder2.up(); ladder2.showStep() = 0", function() {
+            ladder2.up();
+            assert.equal(ladder2.showStep(), 0);
+        });
+    });
 });
 
 describe("сумма через замыкание", function () {
