@@ -56,3 +56,45 @@ function formatDate(value) {
 
     throw new TypeError('unknown type of parameter');
 }
+
+
+function User(fullName) {
+    this.fullName = fullName;
+}
+
+const userDescriptors = {
+    firstName: {
+        get: function () {
+            return this.fullName.split(' ')[0];
+        },
+        set: function (name) {
+            this.fullName = `${name} ${this.lastName}`;
+        }
+    },
+    lastName: {
+        get: function () {
+            return this.fullName.split(' ')[1];
+        },
+        set: function (name) {
+            this.fullName = `${this.firstName} ${name}`;
+        }
+    }
+};
+
+Object.defineProperties(User.prototype, userDescriptors);
+
+
+function Article() {
+    this.created = new Date();
+
+    Article.count++;
+    Article.lastCreated = this.created;
+    Article.showStats = () => alert(`Всего: ${Article.count}, Последняя: ${Article.lastCreated}`);
+}
+
+Article.count = 0;
+
+
+function sumArgs() {
+    return [].slice.call(arguments).reduce((a, b) => a + b, 0);
+}
