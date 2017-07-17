@@ -139,7 +139,7 @@ describe("chaining", function () {
         assert.throws(Ladder, TypeError, typeErrorMessage);
     });
 
-    describe("тестирование нескольких объектов Ladder", function () {
+    describe("тестирование нескольких объектов Ladder, ladder2.up = ladder1.up", function () {
         let ladder1;
         let ladder2;
 
