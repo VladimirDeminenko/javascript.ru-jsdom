@@ -98,3 +98,34 @@ Article.count = 0;
 function sumArgs() {
     return [].slice.call(arguments).reduce((a, b) => a + b, 0);
 }
+
+function makeLogging(f, log) {
+    return function (arg) {
+        log.push(arg);
+
+        return f.call(this, arg);
+    }
+}
+
+function makeLogging2(f, log) {
+    return function (...args) {
+        log.push(args);
+
+        return f.apply(this, args);
+    }
+}
+
+function makeCaching(f) {
+    let cache = {};
+
+    return function (arg) {
+        let result = cache[arg];
+
+        if (!(result || arg in cache)) {
+            result = f.call(this, arg);
+            cache[arg] = result;
+        }
+
+        return result;
+    }
+}
