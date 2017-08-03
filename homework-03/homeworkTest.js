@@ -138,11 +138,11 @@ describe("formatRelativeDate", function () {
 
 describe("сумма через замыкание", function () {
     it("sum(1)(2) = 3", function () {
-        assert.equal(3, closureSum(1)(2));
+        assert.equal(3, sum(1)(2));
     });
 
     it("sum('5')('-1') = 4", function () {
-        assert.equal(4, closureSum('5')('-1'));
+        assert.equal(4, sum('5')('-1'));
     });
 });
 

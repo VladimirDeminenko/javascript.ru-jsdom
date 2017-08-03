@@ -178,23 +178,23 @@ describe("chaining", function () {
 
 describe("сумма через замыкание", function () {
     it("sum()() = 0", function () {
-        assert.equal(closureSum()(), 0);
+        assert.equal(sum()(), 0);
     });
 
     it("sum(1)() = 1", function () {
-        assert.equal(closureSum(1)(), 1);
+        assert.equal(sum(1)(), 1);
     });
 
     it("sum()(2) = 2", function () {
-        assert.equal(closureSum()(2), 2);
+        assert.equal(sum()(2), 2);
     });
 
     it("sum(1)(2) = 3", function () {
-        assert.equal(closureSum(1)(2), 3);
+        assert.equal(sum(1)(2), 3);
     });
 
     it("sum('5')('-1') = 4", function () {
-        assert.equal(closureSum('5')('-1'), 4);
+        assert.equal(sum('5')('-1'), 4);
     });
 });
 

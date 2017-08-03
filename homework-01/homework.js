@@ -1,12 +1,12 @@
 /**
  * @file homework.js
  * @author Vladimir Deminenko
- * @date 01.07.2017
+ * @date 01.08.2017
  */
 
 'use strict';
 
-function closureSum() {
+function sum() {
     let result = 0;
 
     for (let i = 0; i < arguments.length; i++) {
@@ -17,9 +17,9 @@ function closureSum() {
 }
 
 function getDecimal(value) {
-    let valStr = `${value}`.trim();
+    let valStr = value.toString().trim();
 
-    if (valStr === '' || !~valStr.indexOf('.')) {
+    if (valStr === '' || !valStr.includes('.')) {
         return 0;
     }
 
@@ -43,9 +43,9 @@ function fib(n) {
 }
 
 function fibBinet(n) {
-    const SQRT5 = Math.sqrt(5);
+    const sqrt5 = Math.sqrt(5);
 
-    return Math.round(Math.pow((1 + SQRT5) / 2, n) / SQRT5);
+    return Math.round(Math.pow((1 + sqrt5) / 2, n) / sqrt5);
 }
 
 function ucFirst(str) {
@@ -59,15 +59,15 @@ function ucFirst(str) {
 }
 
 function checkSpam(str) {
-    const DICTIONARY = [
+    const dictionary = [
         'viagra',
         'xxx'
     ];
 
-    const TEST_VALUE = str.trim().toLowerCase();
+    const testValue = str.trim().toLowerCase();
 
-    for (let i = 0; i < DICTIONARY.length; i++) {
-        if (~TEST_VALUE.indexOf(DICTIONARY[i])) {
+    for (let i = 0; i < dictionary.length; i++) {
+        if (testValue.includes(dictionary[i])) {
             return true;
         }
     }
