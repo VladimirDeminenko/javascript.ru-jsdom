@@ -1,15 +1,29 @@
 /**
  * @file homework.js
  * @author Vladimir Deminenko
- * @date 04.07.2017
+ * @date 04.08.2017
  */
 
 'use strict';
 
+const ONE_SECOND_LENGTH = 1000;
+const ONE_MINUTE_LENGTH = 60 * ONE_SECOND_LENGTH;
+const ONE_HOUR_LENGTH = 60 * ONE_MINUTE_LENGTH;
+const ONE_DAY_LENGTH = 24 * ONE_HOUR_LENGTH;
+const DAYS_OF_WEEK = [
+    'вс',
+    'пн',
+    'вт',
+    'ср',
+    'чт',
+    'пт',
+    'сб'
+];
+
 let Singleton = (function () {
     let instance;
 
-    return function Singleton () {
+    return function Singleton() {
         if (instance) {
             return instance;
         }
@@ -50,6 +64,11 @@ function maxValue(salaries) {
     return result;
 }
 
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
 function multiplyNumeric(obj) {
     let value;
 
@@ -59,10 +78,6 @@ function multiplyNumeric(obj) {
         if (isNumeric(value)) {
             obj[prop] = value * 2;
         }
-    }
-
-    function isNumeric(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n)
     }
 }
 
@@ -104,33 +119,32 @@ function primeNumbersTo(n) {
     } while (p * p < n);
 
     return result;
+}
 
+function initArray(n) {
+    let result = [];
 
-    function strikeOut(arr, startIdx) {
-        let result = arr.slice(0, startIdx + 1); // starts as [2];
-        let p = arr[startIdx];
-        let value;
-
-        for (let i = startIdx + 1; i < arr.length; i++) {
-            value = arr[i];
-
-            if (value % p !== 0) {
-                result.push(value);
-            }
-        }
-
-        return result;
+    for (let i = 2; i <= n; i++) {
+        result.push(i);
     }
 
-    function initArray(n) {
-        let result = [];
+    return result;
+}
 
-        for (let i = 2; i <= n; i++) {
-            result.push(i);
+function strikeOut(arr, startIdx) {
+    let result = arr.slice(0, startIdx + 1);
+    let p = arr[startIdx];
+    let value;
+
+    for (let i = startIdx + 1; i < arr.length; i++) {
+        value = arr[i];
+
+        if (value % p !== 0) {
+            result.push(value);
         }
-
-        return result;
     }
+
+    return result;
 }
 
 function sumOfPrimeNumbersTo(n) {
@@ -159,7 +173,7 @@ function getMaxSubSum(arr) {
 function addClass(obj, cls) {
     let classes = obj.className.split(' ');
 
-    if (!~classes.indexOf(cls)) {
+    if (!classes.includes(cls)) {
         classes.push(cls);
     }
 
@@ -236,15 +250,15 @@ function aclean(arr) {
     }
 
     return result;
+}
 
-    function createKey(word) {
-        return word
-            .trim()
-            .toLowerCase()
-            .split('')
-            .sort()
-            .join('');
-    }
+function createKey(word) {
+    return word
+        .trim()
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('');
 }
 
 function unique(arr) {
@@ -254,7 +268,7 @@ function unique(arr) {
     for (let i = 0; i < arr.length; i++) {
         value = arr[i];
 
-        if (!~result.indexOf(value)) {
+        if (!result.includes(value)) {
             result.push(value);
         }
     }
@@ -274,4 +288,88 @@ function getSums(arr) {
     }, 0);
 
     return result;
+}
+
+function getWeekDay(date) {
+    return DAYS_OF_WEEK[date.getDay()];
+}
+
+function getLocalDay(date) {
+    return date.getUTCDay() + 1;
+}
+
+function getDateAgo(date, days) {
+    return new Date(date - days * ONE_DAY_LENGTH).getDate();
+}
+
+function getLastDayOfMonth(year, month) {
+    return new Date(new Date(year, month + 1, 1) - ONE_DAY_LENGTH).getDate();
+}
+
+function formatDate(date) {
+    const options = {
+        year: '2-digit',
+        month: 'numeric',
+        day: 'numeric'
+    };
+
+    return date.toLocaleString("ru", options);
+}
+
+function formatRelativeDate(date) {
+    const options = {
+        year: '2-digit',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+    };
+
+    const relativeDate = new Date() - date;
+
+    if (relativeDate < ONE_SECOND_LENGTH) {
+        return 'только что';
+    }
+
+    if (relativeDate < ONE_MINUTE_LENGTH) {
+        return `${Math.floor(relativeDate / ONE_SECOND_LENGTH)} сек. назад`;
+    }
+
+    if (relativeDate < ONE_HOUR_LENGTH) {
+        return `${Math.floor(relativeDate / ONE_MINUTE_LENGTH)} мин. назад`;
+    }
+
+    return date.toLocaleString("ru", options).replace(',', '');
+}
+
+function stringToNumericArray(str) {
+    let result = str.match(/(\-|\+)?(\d*\.)?\d+/g);
+
+    if (result) {
+        result.map(function (elem, idx) {
+            result[idx] = parseFloat(elem);
+        });
+    }
+
+    return result;
+}
+
+function getMinMax(str) {
+    let min = null;
+    let max = null;
+    let numArray = stringToNumericArray(str);
+
+    if (numArray) {
+        numArray.map(function (elem) {
+            if (min > elem || min === null) {
+                min = elem;
+            }
+
+            if (max < elem || max === null) {
+                max = elem;
+            }
+        });
+    }
+
+    return {min, max};
 }
