@@ -590,7 +590,7 @@ describe("getMinMax", function () {
         let test = tests[i];
 
         if (test.result) {
-            it(`stringToNumeric-Array('${test.str}') = [${test.result}]`, function () {
+            it(`stringToNumericArray('${test.str}') = [${test.result}]`, function () {
                 assert.deepEqual(stringToNumericArray(`${test.str}}`), test.result);
             });
         }
