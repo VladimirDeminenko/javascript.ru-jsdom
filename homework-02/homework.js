@@ -347,7 +347,7 @@ function stringToNumericArray(str) {
 
     if (result) {
         result.map(function (elem, idx) {
-            result[idx] = parseFloat(elem);
+            result[idx] = +elem;
         });
     }
 
