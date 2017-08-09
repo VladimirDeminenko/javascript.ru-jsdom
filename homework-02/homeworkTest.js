@@ -10,50 +10,6 @@ describe("Singleton", function () {
     });
 });
 
-describe("Пуст ли объект", function () {
-    it("returns true for an empty object", function () {
-        assert.isTrue(isEmpty({}));
-    });
-
-    it("returns false if a property exists", function () {
-        assert.isFalse(isEmpty({
-            anything: false
-        }));
-    });
-});
-
-describe("Сумма свойств", function () {
-    it("returns sum of salaries", function () {
-        const salaries = {
-            "Вася": 100,
-            "Петя": 300,
-            "Даша": 250
-        };
-
-        assert.equal(650, sumOf(salaries));
-    });
-
-    it("returns 0", function () {
-        assert.equal(0, sumOf({}));
-    });
-});
-
-describe("Свойство с наибольшим значением", function () {
-    it("returns имя сотрудника, у которого самая большая зарплата", function () {
-        const salaries = {
-            "Вася": 100,
-            "Петя": 300,
-            "Даша": 250
-        };
-
-        assert.equal("Петя", maxValue(salaries));
-    });
-
-    it("returns \"нет сотрудников\"", function () {
-        assert.equal("нет сотрудников", maxValue({}));
-    });
-});
-
 describe("multiplyNumeric", function () {
     it("multiplies all numeric properties by 2", function () {
         let menu = {

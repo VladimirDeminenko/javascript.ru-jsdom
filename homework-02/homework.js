@@ -36,20 +36,6 @@ let Singleton = (function () {
     }
 })();
 
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
-
-function sumOf(salaries) {
-    let result = 0;
-
-    for (let employee in salaries) {
-        result += salaries[employee];
-    }
-
-    return result;
-}
-
 function maxValue(salaries) {
     let result = "нет сотрудников";
     let max = 0;
