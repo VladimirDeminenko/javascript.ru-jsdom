@@ -7,13 +7,13 @@
 'use strict';
 
 /**
- * compares two objects and their properties
+ * function deepEqual() compares two objects and their properties
  * @param {Object} obj1
  * @param {Object} obj2
  * @returns {boolean}
  */
 function deepEqual(obj1, obj2) {
-    // сравнение примитивов
+    // сравнение примитивов, отличных от undefined
     if (![typeof obj1, typeof obj2].includes('object')) {
         return obj1 === obj2 && obj1 !== undefined;
     }
@@ -58,13 +58,13 @@ function deepEqual(obj1, obj2) {
 }
 
 /**
- * compares two objects and their properties
+ * function deepEqual() compares two objects and their properties
  * @param {Object} obj1
  * @param {Object} obj2
  * @returns {boolean}
  */
 function deepEqual2(obj1, obj2) {
-    // сравнение примитивов
+    // сравнение примитивов, отличных от undefined
     if (![typeof obj1, typeof obj2].includes('object')) {
         return obj1 === obj2 && obj1 !== undefined;
     }
