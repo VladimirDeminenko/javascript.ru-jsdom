@@ -13,9 +13,7 @@
  * @returns {boolean}
  */
 function deepEqual(obj1, obj2) {
-    let keys;
-    let keys2;
-
+    // сравнение примитивов
     if (![typeof obj1, typeof obj2].includes('object')) {
         return obj1 === obj2 && obj1 !== undefined;
     }
@@ -27,7 +25,10 @@ function deepEqual(obj1, obj2) {
         return true;
     }
 
-    // ПРАВИЛЬНОЕ использование try...catch
+    let keys;
+    let keys2;
+
+    // использование try...catch
     // позволяет обойтись без многих проверок - сравни с deepEqual2()
     try {
         keys = Object.keys(obj1);
@@ -63,9 +64,7 @@ function deepEqual(obj1, obj2) {
  * @returns {boolean}
  */
 function deepEqual2(obj1, obj2) {
-    let keys1;
-    let keys2;
-
+    // сравнение примитивов
     if (![typeof obj1, typeof obj2].includes('object')) {
         return obj1 === obj2 && obj1 !== undefined;
     }
@@ -81,24 +80,24 @@ function deepEqual2(obj1, obj2) {
         typeof obj1 !== 'object' ||
         typeof obj2 !== 'object' ||
         (obj1 === null && obj2 !== null) ||
-        (obj2 === null && obj1 !== null)
+        (obj1 !== null && obj2 === null)
     ) {
         return false;
     }
 
-    keys1 = Object.keys(obj1);
-    keys2 = Object.keys(obj2);
+    let keys = Object.keys(obj1);
+    let keys2 = Object.keys(obj2);
 
     if (
-        keys1 && keys1.length &&
+        keys && keys.length &&
         keys2 && keys2.length &&
-        keys1.length !== keys2.length
+        keys.length !== keys2.length
     ) {
         return false;
     }
 
-    for (let i = 0; i < keys1.length; i++) {
-        let key = keys1[i];
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
 
         if (typeof obj1[key] === 'object') {
             return deepEqual(obj1[key], obj2[key]);
