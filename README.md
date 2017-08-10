@@ -29,7 +29,7 @@
     - Форвардинг, одалживание и делегирование функций.
     - Прототипы, классы, прототипное и функциональное ООП, детали использования.
     - Homeworks:
-        - [homework-03](http://plnkr.co/edit/UNirOLMgrVvvhhlD5Ewf?p=preview)
+        - [homework-03](http://plnkr.co/edit/SdVw97fpScEU5uNB5LPM?p=preview)
             - [extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
         - [homework-04](http://plnkr.co/edit/jtqzlylHCi0oFHeVpO99?p=preview)
             - [test of an exception](http://plnkr.co/edit/ptSoFFDS6vD3DVYCViNL?p=preview)

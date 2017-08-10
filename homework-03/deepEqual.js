@@ -16,6 +16,10 @@ function deepEqual(obj1, obj2) {
     let keys;
     let keys2;
 
+    if (![typeof obj1, typeof obj2].includes('object')) {
+        return obj1 === obj2 && obj1 !== undefined;
+    }
+
     if (
         obj1 === null &&
         obj2 === null
@@ -61,6 +65,10 @@ function deepEqual(obj1, obj2) {
 function deepEqual2(obj1, obj2) {
     let keys1;
     let keys2;
+
+    if (![typeof obj1, typeof obj2].includes('object')) {
+        return obj1 === obj2 && obj1 !== undefined;
+    }
 
     if (
         obj1 === null &&

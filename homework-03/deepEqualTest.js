@@ -23,6 +23,22 @@ describe('deepEqual', function() {
         assert.strictEqual(deepEqual(null, null), true);
     });
 
+    it('Передаём одинаковые числа', function() {
+        assert.strictEqual(deepEqual(2, 2), true);
+    });
+
+    it('Передаём разные числа', function() {
+        assert.strictEqual(deepEqual(2, 3), false);
+    });
+
+    it('Передаём одинаковые строки', function() {
+        assert.strictEqual(deepEqual(' d', ' d'), true);
+    });
+
+    it('Передаём 0 и null', function() {
+        assert.strictEqual(deepEqual(0, null), false);
+    });
+
     it('Ничего не передаём', function() {
         assert.strictEqual(deepEqual(), false);
     });
