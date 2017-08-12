@@ -13,7 +13,7 @@
  * @returns {boolean}
  */
 function deepEqual(obj, obj2) {
-    // сравнение примитивов, отличных от undefined
+    // сравнение примитивов и значений undefined
     if (![typeof obj, typeof obj2].includes('object')) {
         return obj === obj2 && obj !== undefined;
     }
