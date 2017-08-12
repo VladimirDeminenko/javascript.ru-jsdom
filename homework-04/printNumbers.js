@@ -9,7 +9,7 @@ const MESSAGE_INVALID_PARAMETER = 'Invalid parameter';
 /**
  * Возвращает строки чисел в колонках.
  * @throws  {Error}         при передаче неподходящих параметров,
- *                          возбужлает Exception с соответствующим текстом
+ *                          возбуждает Exception с соответствующим текстом
  * @param   {number}  max   от 0 до max
  * @param   {number}  cols  количество колонок
  * @returns {string}
@@ -30,7 +30,7 @@ var printNumbers = function (max, cols) {
 /**
  * Проверяет корректность переданных параметров.
  * @throws  {Error} при передаче неподходящих параметров,
- *                  возбужлает Exception с соответствующим текстом
+ *                  возбуждает Exception с соответствующим текстом
  * @param   max     максимальное значение, не меньше нуля
  * @param   cols    количество колонок, положительное, больше нуля
  */
