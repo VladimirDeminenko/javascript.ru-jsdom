@@ -4,6 +4,8 @@
  * @date 12.08.2017
  */
 
+'use strict';
+
 const MESSAGE_INVALID_PARAMETER = 'Invalid parameter';
 
 /**

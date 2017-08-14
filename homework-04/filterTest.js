@@ -4,7 +4,7 @@
  * @date 14.08.2017
  */
 
-  'use strict';
+'use strict';
 
 describe("фильтрация через функцию", function () {
     let arr;
