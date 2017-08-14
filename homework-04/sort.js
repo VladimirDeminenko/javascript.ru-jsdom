@@ -14,11 +14,9 @@
  * @returns {Function}
  */
 function byField(fieldName) {
-    let sortByAge = function (user1, user2) {
-        return user1.age - user2.age;
-    };
+    let sortByAge = (user1, user2) => user1.age - user2.age;
 
-    let sortByName = function (user1, user2) {
+    let sortByName = (user1, user2) => {
         if (user1.name > user2.name) {
             return 1;
         }

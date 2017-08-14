@@ -14,7 +14,7 @@ const MESSAGE_INVALID_PARAMETER = 'Invalid parameter';
  * @param   {number}  cols  количество колонок
  * @returns {string}
  */
-var printNumbers = function (max, cols) {
+let printNumbers = function (max, cols) {
     checkParams(max, cols);
 
     let rows = [];

@@ -36,9 +36,7 @@ function filter(arr, func) {
  * @returns {Function}
  */
 function inArray(arr) {
-    return function (value) {
-        return arr.includes(value);
-    };
+    return value => arr.includes(value);
 }
 
 /**
@@ -50,7 +48,5 @@ function inArray(arr) {
  * @returns {Function}
  */
 function inBetween(a, b) {
-    return function (value) {
-        return value >= a && value <= b;
-    };
+    return value => value >= a && value <= b;
 }

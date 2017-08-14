@@ -14,9 +14,7 @@
  */
 function makeArmy() {
     function createShooter(shooter) {
-        return function () {
-            return shooter;
-        }
+        return () => shooter;
     }
 
     let shooters = [];

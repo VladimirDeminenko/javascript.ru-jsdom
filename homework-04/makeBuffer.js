@@ -28,9 +28,7 @@ function makeBuffer() {
         buffer.push(`${value}`);
     };
 
-    cleanedBuffer.clear = function () {
-        buffer.length = 0;
-    };
+    cleanedBuffer.clear = () => buffer.length = 0;
 
     return cleanedBuffer;
 }
