@@ -41,7 +41,7 @@ function getSmartCalculatorMethod(str = null, methods = {}) {
     return {arg1, arg2, op};
 }
 
-function SmartCalculator() {
+function ExtendableCalculator() {
     const methods = {
         '+': (a, b) => a + b,
         '-': (a, b) => a - b

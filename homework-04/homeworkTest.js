@@ -37,7 +37,7 @@ describe("smart calculator", function () {
     let calculator;
 
     before(function () {
-        calculator = new SmartCalculator();
+        calculator = new ExtendableCalculator();
     });
 
     after(function () {

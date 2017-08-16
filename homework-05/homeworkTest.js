@@ -37,33 +37,6 @@ describe("formatDate", function () {
 });
 
 
-describe("get/set", function () {
-    let user;
-
-    beforeEach(function () {
-        user = new User('Василий Попкин');
-    });
-
-    afterEach(function () {
-        user = null;
-    });
-
-    it("returns first name", function () {
-        assert.equal(user.firstName, "Василий");
-    });
-
-    it("returns last name", function () {
-        assert.equal(user.lastName, "Попкин");
-    });
-
-    it("returns changed full name", function () {
-        user.lastName = 'Сидоров';
-        user.firstName = 'Михаил';
-        assert.equal(user.fullName, "Михаил Сидоров");
-    });
-});
-
-
 describe("Article.showStats", function () {
     before(function () {
         sinon.stub(window, "alert");
