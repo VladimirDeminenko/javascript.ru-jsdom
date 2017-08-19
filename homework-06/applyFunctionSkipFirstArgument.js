@@ -13,7 +13,7 @@
  * @returns {*}
  */
 function applyAll(func) {
-    let args = [].slice.call(arguments).slice(1);
+    let args = [].slice.call(arguments, 1);
 
     return func.apply(null, args);
 }
