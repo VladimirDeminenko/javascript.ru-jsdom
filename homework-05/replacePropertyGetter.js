@@ -17,18 +17,18 @@ function User(fullName) {
 
 const userDescriptors = {
     firstName: {
-        get: function () {
+        get() {
             return this.fullName.split(' ')[0];
         },
-        set: function (name) {
+        set(name) {
             this.fullName = `${name} ${this.lastName}`;
         }
     },
     lastName: {
-        get: function () {
+        get() {
             return this.fullName.split(' ')[1];
         },
-        set: function (name) {
+        set(name) {
             this.fullName = `${this.firstName} ${name}`;
         }
     }

@@ -30,7 +30,7 @@ function DateUtils() {
             day: 'numeric'
         };
 
-        return date.toLocaleString("ru", options);
+        return date.toLocaleString('ru', options);
     };
 }
 

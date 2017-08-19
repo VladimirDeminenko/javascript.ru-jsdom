@@ -15,7 +15,7 @@
 function Accumulator(startingValue = 0) {
     this.value = startingValue;
 
-    this.read = () => {
+    this.read = function () {
         this.value += +prompt('you value:', '0');
     };
 }

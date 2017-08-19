@@ -20,17 +20,19 @@ function Ladder() {
 
     let step = 0;
 
-    this.up = () => {
+    this.up = function () {
         step++;
 
         return this;
     };
 
-    this.down = () => {
+    this.down = function () {
         step--;
 
         return this;
     };
 
-    this.showStep = () => step;
+    this.showStep = function () {
+        return step;
+    };
 }

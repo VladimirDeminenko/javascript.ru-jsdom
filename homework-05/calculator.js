@@ -17,16 +17,16 @@ function Calculator() {
     let a = 0;
     let b = 0;
 
-    this.read = () => {
+    this.read = function () {
         a = +prompt('first number:', '0');
         b = +prompt('second number:', '0');
     };
 
-    this.sum = () => {
+    this.sum = function () {
         return a + b;
     };
 
-    this.mul = () => {
+    this.mul = function () {
         return a * b;
     };
 }

@@ -6,7 +6,7 @@
 
 'use strict';
 
-describe("accumulator", function () {
+describe('accumulator', function () {
     let accumulator;
 
     before(function () {
@@ -14,7 +14,7 @@ describe("accumulator", function () {
     });
 
     beforeEach(function () {
-        sinon.stub(window, "prompt")
+        sinon.stub(window, 'prompt')
     });
 
     afterEach(function () {
@@ -25,24 +25,24 @@ describe("accumulator", function () {
         accumulator = null;
     });
 
-    it("начальное значение 1", function () {
+    it('начальное значение 1', function () {
         assert.equal(accumulator.value, 1);
     });
 
-    it("после ввода 0 значение 1", function () {
-        prompt.returns("0");
+    it('после ввода 0 значение 1', function () {
+        prompt.returns('0');
         accumulator.read();
         assert.equal(accumulator.value, 1);
     });
 
-    it("после ввода 1 значение 2", function () {
-        prompt.returns("1");
+    it('после ввода 1 значение 2', function () {
+        prompt.returns('1');
         accumulator.read();
         assert.equal(accumulator.value, 2);
     });
 
-    it("после ввода 2 значение 4", function () {
-        prompt.returns("2");
+    it('после ввода 2 значение 4', function () {
+        prompt.returns('2');
         accumulator.read();
         assert.equal(accumulator.value, 4);
     });

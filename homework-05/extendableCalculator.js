@@ -18,7 +18,7 @@ function ExtendableCalculator() {
         '-': (a, b) => a - b
     };
 
-    this.calculate = (str) => {
+    this.calculate = function (str) {
         let method = getExtendableCalculatorMethod(str, methods);
 
         if (method) {
@@ -28,12 +28,13 @@ function ExtendableCalculator() {
         throw new TypeError('calculate error');
     };
 
-    this.addMethod = (methodName = null, func = null) => {
-        if (!methodName
+    this.addMethod = function (methodName = null, func = null) {
+        if (
+            !methodName
             || typeof methodName !== 'string'
             || !func
-            || typeof func !== 'function') {
-
+            || typeof func !== 'function'
+        ) {
             throw new TypeError('addMethod() error');
         }
 
@@ -53,7 +54,11 @@ function getExtendableCalculatorMethod(str = null, methods = {}) {
     let arg2 = +values[2];
     let op = values[1];
 
-    if (isNaN(arg1) || isNaN(arg2) || !methods[op]) {
+    if (
+        isNaN(arg1) ||
+        isNaN(arg2) ||
+        !methods[op]
+    ) {
         return null;
     }
 

@@ -6,7 +6,7 @@
 
 'use strict';
 
-describe("replace property getter", function () {
+describe('replace property getter', function () {
     let user;
 
     beforeEach(function () {
@@ -17,17 +17,17 @@ describe("replace property getter", function () {
         user = null;
     });
 
-    it("returns first name", function () {
-        assert.equal(user.firstName, "Василий");
+    it('returns first name', function () {
+        assert.equal(user.firstName, 'Василий');
     });
 
-    it("returns last name", function () {
-        assert.equal(user.lastName, "Попкин");
+    it('returns last name', function () {
+        assert.equal(user.lastName, 'Попкин');
     });
 
-    it("returns changed full name", function () {
+    it('returns changed full name', function () {
         user.lastName = 'Сидоров';
         user.firstName = 'Михаил';
-        assert.equal(user.fullName, "Михаил Сидоров");
+        assert.equal(user.fullName, 'Михаил Сидоров');
     });
 });

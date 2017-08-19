@@ -6,7 +6,7 @@
 
 'use strict';
 
-describe("extendable calculator", function () {
+describe('extendable calculator', function () {
     let calculator;
 
     before(function () {
@@ -17,31 +17,31 @@ describe("extendable calculator", function () {
         calculator = null;
     });
 
-    it("calculate(12 + 34) = 46", function () {
-        assert.equal(calculator.calculate("12 + 34"), 46);
+    it('calculate(12 + 34) = 46', function () {
+        assert.equal(calculator.calculate('12 + 34'), 46);
     });
 
-    it("calculate(34 - 12) = 22", function () {
-        assert.equal(calculator.calculate("34 - 12"), 22);
+    it('calculate(34 - 12) = 22', function () {
+        assert.equal(calculator.calculate('34 - 12'), 22);
     });
 
-    it("добавили умножение: calculate(2 * 3) = 6", function () {
-        calculator.addMethod("*", function (a, b) {
+    it('добавили умножение: calculate(2 * 3) = 6', function () {
+        calculator.addMethod('*', function (a, b) {
             return a * b;
         });
 
-        assert.equal(calculator.calculate("2 * 3"), 6);
+        assert.equal(calculator.calculate('2 * 3'), 6);
     });
 
-    it("добавили возведение в степень: calculate(2 ** 3) = 8", function () {
-        calculator.addMethod("**", function (a, b) {
+    it('добавили возведение в степень: calculate(2 ** 3) = 8', function () {
+        calculator.addMethod('**', function (a, b) {
             return Math.pow(a, b);
         });
 
-        assert.equal(calculator.calculate("2 ** 3"), 8);
+        assert.equal(calculator.calculate('2 ** 3'), 8);
     });
 
-    it("calculate() throws an TypeError exception", function () {
+    it('calculate() throws an TypeError exception', function () {
         assert.throws(calculator.calculate, TypeError, 'Incorrect use of a method');
     });
 });

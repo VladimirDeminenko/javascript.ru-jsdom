@@ -6,7 +6,7 @@
 
 'use strict';
 
-describe("chain-calls", function () {
+describe('chain-calls', function () {
     const testMessage = 'using a class as a function throws a TypeError exception';
     const typeErrorMessage = 'Cannot call a class as a function';
 
@@ -20,7 +20,7 @@ describe("chain-calls", function () {
         ladder = null;
     });
 
-    it("ladder.up().up().down().up().down().showStep() = 1", function () {
+    it('ladder.up().up().down().up().down().showStep() = 1', function () {
         assert.equal(ladder.up().up().down().up().down().showStep(), 1);
     });
 
@@ -28,11 +28,11 @@ describe("chain-calls", function () {
         assert.throws(Ladder, TypeError);
     });
 
-    it(`${testMessage} with the message "${typeErrorMessage}"`, function () {
+    it(`${testMessage} with the message '${typeErrorMessage}'`, function () {
         assert.throws(Ladder, TypeError, typeErrorMessage);
     });
 
-    describe("тестирование нескольких объектов Ladder, ladder2.up = ladder1.up", function () {
+    describe('тестирование нескольких объектов Ladder, ladder2.up = ladder1.up', function () {
         let ladder1;
         let ladder2;
 
@@ -47,22 +47,22 @@ describe("chain-calls", function () {
             ladder1 = null;
         });
 
-        it("ladder1.up(); ladder1.showStep() = 1", function () {
+        it('ladder1.up(); ladder1.showStep() = 1', function () {
             ladder1.up();
             assert.equal(ladder1.showStep(), 1);
         });
 
-        it("ladder1.up(); ladder2.showStep() = 0", function () {
+        it('ladder1.up(); ladder2.showStep() = 0', function () {
             ladder1.up();
             assert.equal(ladder2.showStep(), 0);
         });
 
-        it("ladder2.up(); ladder1.showStep() = 1", function () {
+        it('ladder2.up(); ladder1.showStep() = 1', function () {
             ladder2.up();
             assert.equal(ladder1.showStep(), 1);
         });
 
-        it("ladder2.up(); ladder2.showStep() = 0", function () {
+        it('ladder2.up(); ladder2.showStep() = 0', function () {
             ladder2.up();
             assert.equal(ladder2.showStep(), 0);
         });
