@@ -38,6 +38,7 @@
         - [homework-05](http://plnkr.co/edit/ccXsuKZqxtfT3sPGP6nr?p=preview)
         - [homework-05 (old)](http://plnkr.co/edit/5XwlxkoOQu2I0TTUP5pK?p=preview)
             - [Ladder & ArrowLadder](http://plnkr.co/edit/SR8sjGwJmuJ3f8ODk6eP?p=preview)
+        - [homework-06](http://plnkr.co/edit/ElzDCxBcpjbnBbFz2uk4?p=preview)
             
 
 
