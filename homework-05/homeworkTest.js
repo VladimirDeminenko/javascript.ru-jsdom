@@ -4,6 +4,8 @@
  * @date 16.07.2017
  */
 
+'use strict';
+
 describe('formatDate', function () {
     it('читает дату вида гггг-мм-дд из строки', function () {
         assert.equal(formatDate('2011-10-02'), '02.10.11');
