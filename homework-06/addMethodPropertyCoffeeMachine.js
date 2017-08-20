@@ -6,6 +6,13 @@
 
 'use strict';
 
+/**
+ * https://learn.javascript.ru/task/add-method-property-coffeemachine
+ * @constructor CoffeeMachine
+ * @param   {number}    power   мощность кофеварки
+ * @method              run()   запускает кофеварку
+ * @method              stop()  останавливает кофеварку
+ */
 function CoffeeMachine(power) {
     const WATER_HEAT_CAPACITY = 4200;
 
@@ -19,7 +26,7 @@ function CoffeeMachine(power) {
     }
 
     function onReady() {
-        console.log('Кофе готов!');
+        alert( 'Кофе готов!' );
     }
 
     self.stop = function () {
