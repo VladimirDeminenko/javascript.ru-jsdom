@@ -7,7 +7,7 @@
 'use strict';
 
 let Dummy = (function () {
-    let instance;
+    let instance = null;
 
     return function Singleton() {
         if (instance) {
