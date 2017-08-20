@@ -12,16 +12,16 @@ describe(`Dummy / Singleton`, function () {
     let baz;
 
     before(function () {
+        baz = Dummy();
         foo = new Dummy();
         bar = new Dummy();
         bar.setValue(123);
-        baz = Dummy();
     });
 
     after(function () {
-        baz = null;
         bar = null;
         foo = null;
+        baz = null;
     });
 
     it(`foo === bar`, function () {
