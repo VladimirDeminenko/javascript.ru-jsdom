@@ -9,15 +9,15 @@
 let Dummy = (function () {
     let instance;
 
-    return function Dummy() {
+    return function Singleton() {
         if (instance) {
             return instance;
         }
 
-        if (this && this.constructor === Dummy) {
+        if (this && this.constructor === Singleton) {
             instance = this;
         } else {
-            return new Dummy();
+            return new Singleton();
         }
     }
 })();

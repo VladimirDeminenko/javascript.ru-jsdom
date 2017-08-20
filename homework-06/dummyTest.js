@@ -6,7 +6,7 @@
 
 'use strict';
 
-describe(`Dummy()`, function () {
+describe(`Dummy / Singleton`, function () {
     let foo;
     let bar;
     let baz;
@@ -19,8 +19,9 @@ describe(`Dummy()`, function () {
     });
 
     after(function () {
-        foo = null;
+        baz = null;
         bar = null;
+        foo = null;
     });
 
     it(`foo === bar`, function () {

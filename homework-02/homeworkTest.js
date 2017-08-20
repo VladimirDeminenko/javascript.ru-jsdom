@@ -6,7 +6,7 @@
 
 describe("Singleton", function () {
     it("new Singleton() === new Singleton()", function () {
-        assert.strictEqual(new Singleton(), new Singleton());
+        assert.strictEqual(new Dummy(), new Dummy());
     });
 });
 
