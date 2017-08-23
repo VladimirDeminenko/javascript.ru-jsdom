@@ -15,10 +15,10 @@
  * @returns {Function}          результат выполнения функции f()
  */
 function makeCaching(f) {
-    let cache = [];
+    let cache = {};
 
-    return function () {
-        let arg = arguments[0];
+    return function (...args) {
+        let arg = args[0];
         let result = cache[arg];
 
         if (!result) {

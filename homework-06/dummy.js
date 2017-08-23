@@ -14,7 +14,7 @@ let Dummy = (function () {
             return instance;
         }
 
-        if (this && this.constructor === Singleton) {
+        if (new.target) {
             instance = this;
         } else {
             return new Singleton();

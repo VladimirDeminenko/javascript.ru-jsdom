@@ -16,26 +16,19 @@
 function CoffeeMachine(power) {
     const WATER_HEAT_CAPACITY = 4200;
 
-    let self = this;
+    let getBoilTime = () => this.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+    let onReady = () => alert('Кофе готов!');
     let timerId = null;
 
-    self.waterAmount = 0;
+    this.waterAmount = 0;
 
-    function getBoilTime() {
-        return self.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
-    }
-
-    function onReady() {
-        alert( 'Кофе готов!' );
-    }
-
-    self.stop = function () {
+    this.stop = function () {
         if (timerId) {
             clearTimeout(timerId);
         }
     };
 
-    self.run = function () {
+    this.run = function () {
         timerId = setTimeout(onReady, getBoilTime());
     };
 }

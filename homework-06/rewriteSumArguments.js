@@ -12,8 +12,8 @@
  * @throws {InvalidParameterError}  вызывает исключение, если сумма является NaN
  * @returns {number}                сумма всех аргументов
  */
-function sumArgs() {
-    return [].slice.call(arguments).reduce(sum, 0);
+function sumArgs(...args) {
+    return args.reduce(sum, 0);
 }
 
 let sum = (a, b) => {

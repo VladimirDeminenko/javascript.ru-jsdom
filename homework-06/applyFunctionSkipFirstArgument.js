@@ -12,8 +12,6 @@
  * @param func
  * @returns {*}
  */
-function applyAll(func) {
-    let args = [].slice.call(arguments, 1);
-
+function applyAll(func, ...args) {
     return func.apply(null, args);
 }
