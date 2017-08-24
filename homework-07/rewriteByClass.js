@@ -1,5 +1,5 @@
 /**
- * @file addMethodPropertyCoffeeMachine.js
+ * @file rewriteByClass.js
  * @author Vladimir Deminenko
  * @date 23.08.2017
  */
