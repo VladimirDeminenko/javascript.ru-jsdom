@@ -6,6 +6,9 @@
 
 'use strict';
 
+/**
+ * https://learn.javascript.ru/task/hamsters-with-proto
+ */
 class Hamster {
     constructor () {
         this.food = [];
