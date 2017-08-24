@@ -35,5 +35,6 @@ class AnimatingMenu extends Menu {
     }
 }
 
+// todo Зачем прототип ? Или статичный метод или замыкание
 AnimatingMenu.prototype.STATE_ANIMATING = 2;
 

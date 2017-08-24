@@ -7,6 +7,9 @@
 'use strict';
 
 class Class {
+    // todo Хм конечно так тоже будет работать
+    // но здесь ожидается именно статичное свойство
+    // static
     extend(desc) {
         let ResultClass = new Class();
 
