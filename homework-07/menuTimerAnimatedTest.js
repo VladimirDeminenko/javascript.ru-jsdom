@@ -9,7 +9,7 @@
 describe(`AnimatingMenu`, function () {
     let menu;
 
-    it(`при истечении 1 секунды, вызывается Menu.prototype.open()`, function () {
+    it(`по истечении 1 секунды, вызывается Menu.prototype.open()`, function () {
         menu.open();
         this.clock.tick(1000);
 
