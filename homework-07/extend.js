@@ -7,19 +7,31 @@
 'use strict';
 
 class Class {
-    // todo Хм конечно так тоже будет работать
-    // но здесь ожидается именно статичное свойство
-    // static
     extend(desc) {
-        let ResultClass = new Class();
+        let fn = desc.constructor;
 
-        for (let key in desc) {
-            ResultClass.prototype[key] = desc[key];
-        }
+        Object.setPrototypeOf(desc, this.prototype);
+        fn.prototype = desc;
+        fn.extend = this.extend;
 
-        return ResultClass;
+        return fn;
     }
 }
+
+// class Class {
+//     // todo Хм конечно так тоже будет работать
+//     // но здесь ожидается именно статичное свойство
+//     // static
+//     extend(desc) {
+//         let ResultClass = new Class();
+//
+//         for (let key in desc) {
+//             ResultClass.prototype[key] = desc[key];
+//         }
+//
+//         return ResultClass;
+//     }
+// }
 
 let Widget = Class.extend(
     {
