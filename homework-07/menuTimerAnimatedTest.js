@@ -13,17 +13,17 @@ describe(`AnimatingMenu`, function () {
         menu.open();
         this.clock.tick(1000);
 
-        assert(AnimatingMenu.prototype.open.calledWith());
+        assert(Menu.prototype.open.calledWith());
     });
 
     before(function () {
-        menu = new AnimatingMenu(AnimatingMenu.STATE_CLOSED);
-        sinon.stub(AnimatingMenu.prototype, `open`);
+        menu = new AnimatingMenu();
+        sinon.stub(Menu.prototype, `open`);
         this.clock = sinon.useFakeTimers(Date.now());
     });
 
     after(function () {
-        AnimatingMenu.prototype.open.restore();
+        Menu.prototype.open.restore();
         this.clock.restore();
         menu = null;
     });
