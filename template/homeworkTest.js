@@ -6,30 +6,30 @@
 
 'use strict';
 
-describe(`formatDate`, function () {
-    it(`читает дату из объекта Date`, function () {
+describe(`formatDate`, () => {
+    it(`читает дату из объекта Date`, () => {
         assert.equal(formatDate(new Date(2014, 0, 1)), `01.01.14`);
     });
 
-    it(`formatDate({}) throws TypeError with the message \`unknown type of parameter\``, function () {
+    it(`formatDate({}) throws TypeError with the message 'unknown type of parameter'`, () => {
         let stub = () => formatDate({});
 
         assert.throws(stub, TypeError, `unknown type of parameter`);
     });
 });
 
-describe(`Article.showStats`, function () {
-    before(function () {
+describe(`Article.showStats`, () => {
+    before(() => {
         sinon.stub(window, `alert`);
         this.clock = sinon.useFakeTimers();
     });
 
-    after(function () {
+    after(() => {
         window.alert.restore();
         this.clock.restore();
     });
 
-    it(`Выводит число статей и дату создания последней`, function () {
+    it(`Выводит число статей и дату создания последней`, () => {
         new Article();
         this.clock.tick(100);
         new Article();
