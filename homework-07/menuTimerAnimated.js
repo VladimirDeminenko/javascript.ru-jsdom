@@ -24,17 +24,17 @@ let AnimatingMenu = (function () {
                 return 'анимация';
             }
 
-            return Menu.prototype._stateAsString.call(this);
+            return super._stateAsString.call(this);
         }
 
         open() {
             this._state = STATE_ANIMATING;
-            this._timer = setTimeout(() => Menu.prototype.open.call(this), 1000);
+            this._timer = setTimeout(() => super.open.call(this), 1000);
         }
 
         close() {
             clearInterval(this._timer);
-            Menu.prototype.close.call(this);
+            super.close.call(this);
         }
     }
 })();
