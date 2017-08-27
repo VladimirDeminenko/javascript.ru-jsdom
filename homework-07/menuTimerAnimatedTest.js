@@ -6,6 +6,7 @@
 
 'use strict';
 
-describe(`AnimatingMenu`, function () {
-    it(`... тест не реализован`, () => {});
+describe(`AnimatingMenu`, () => {
+    it(`... тест не реализован`, () => {
+    });
 });
