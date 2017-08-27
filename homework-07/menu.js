@@ -10,33 +10,35 @@
  * https://learn.javascript.ru/task/menu-timer-animated
  */
 
-class Menu {
-    constructor(state) {
-        this._state = state || Menu.STATE_CLOSED;
-    }
+let Menu = (function () {
+    let STATE_CLOSED = 0;
+    let STATE_OPEN = 1;
 
-    open() {
-        this._state = Menu.STATE_OPEN;
-    }
+    return class Menu {
+        constructor(state) {
+            this._state = state || STATE_CLOSED;
+        }
 
-    close() {
-        this._state = Menu.STATE_CLOSED;
-    }
+        open() {
+            this._state = STATE_OPEN;
+        }
 
-    _stateAsString() {
-        switch (this._state) {
-            case Menu.STATE_OPEN:
-                return 'открыто';
+        close() {
+            this._state = STATE_CLOSED;
+        }
 
-            case Menu.STATE_CLOSED:
-                return 'закрыто';
+        _stateAsString() {
+            switch (this._state) {
+                case STATE_OPEN:
+                    return 'открыто';
+
+                case STATE_CLOSED:
+                    return 'закрыто';
+            }
+        }
+
+        showState() {
+            alert(this._stateAsString());
         }
     }
-
-    showState() {
-        alert(this._stateAsString());
-    }
-}
-
-Menu.STATE_CLOSED = 0;
-Menu.STATE_OPEN = 1;
+})();
