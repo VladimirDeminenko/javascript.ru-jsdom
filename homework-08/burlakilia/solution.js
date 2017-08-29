@@ -7,7 +7,7 @@
 'use strict';
 
 /**
- * http://burlakilia.github.io/playground/#-KsjUSxba4s_FOT2iKxF
+ * http://burlakilia.github.io/playground/#-KsjVip29Vg2Cnjgxr_U
  */
 
 let callbacks = [];
@@ -15,9 +15,7 @@ let callbacks = [];
 let setTimeout = function (callback, timeout) {
     // Здесь реализация вашей функции setTimeout
 
-    callbacks.push(
-        new Promise(resolve => resolve(window.setTimeout(callback, timeout)))
-    );
+    callbacks.push(Promise.resolve(window.setTimeout(callback, timeout)));
 };
 
 // Точка входа
