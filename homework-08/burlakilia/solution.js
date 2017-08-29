@@ -6,6 +6,10 @@
 
 'use strict';
 
+/**
+ * http://burlakilia.github.io/playground/#-KsirEYUEYY1E_UhbSCt
+ */
+
 let callbacks = [];
 
 let setTimeout = function (callback, timeout) {
@@ -23,13 +27,7 @@ function main () {
 
         setTimeout(() => {
             console.log(3);
-
-            setTimeout(() => {
-                console.log(5);
-            },  1000);
-
         }, 400);
-
     }
 
     setTimeout(() => {

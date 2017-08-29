@@ -6,6 +6,10 @@
 
 'use strict';
 
+/**
+ * http://burlakilia.github.io/playground/#-KeF_KE82-LCaDCkF_UT
+ */
+
 let callbacks = [];
 
 setTimeout = function () {
