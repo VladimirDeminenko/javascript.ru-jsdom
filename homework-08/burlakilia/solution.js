@@ -7,7 +7,7 @@
 'use strict';
 
 /**
- * http://burlakilia.github.io/playground/#-KsirEYUEYY1E_UhbSCt
+ * http://burlakilia.github.io/playground/#-KsjUSxba4s_FOT2iKxF
  */
 
 let callbacks = [];
@@ -21,13 +21,14 @@ let setTimeout = function (callback, timeout) {
 };
 
 // Точка входа
-function main () {
+function main() {
     function process() {
         console.log(2);
 
         setTimeout(() => {
             console.log(3);
         }, 400);
+
     }
 
     setTimeout(() => {
@@ -55,6 +56,14 @@ while (true) {
     let promise = callbacks.shift();
 
     if (promise) {
-        promise.then(funk => func());
+        promise
+            .then(funk => {
+                    if (typeof func === 'function') {
+                        func();
+                    }
+                }
+            )
+            .catch(error => console.log(error.message));
     }
 }
+
