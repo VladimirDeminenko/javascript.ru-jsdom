@@ -15,17 +15,14 @@
  */
 function promiseSequence(urls) {
     let results = [];
-    let chain = Promise.resolve();
 
     for (let i = 0; i < urls.length; i++) {
-        let url = urls[i];
-
-        chain = chain
-            .then(() => httpGet(url))
-            .then((result) => {
+        Promise.resolve()
+            .then(() => httpGet(urls[i]))
+            .then(result => {
                 results.push(result);
             })
-            .catch((error) => {
+            .catch(error => {
                 console.log(error.message);
             });
     }
