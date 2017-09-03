@@ -58,7 +58,10 @@
     - Дерево DOM, особенности разработки в современных браузерах с отмирающей, но иногда нужной поддержкой старых.
     - Динамическая генерация интерфейса - методы DOM, их грамотное использование.
     - Homeworks:
-        - [homework-09](http://plnkr.co/edit/OygONdvK7QqeOBVpyTYW?p=preview)
+        - [homework-09](https://learn.javascript.ru/css-selectors#tasks)
+            - [homework-09.01](http://plnkr.co/edit/OygONdvK7QqeOBVpyTYW?p=preview)
+            - [homework-09.02](http://plnkr.co/edit/QuYJeOJJIHoanfeGnRn8?p=preview)
+            - [homework-09.03](http://plnkr.co/edit/Rh6qH0X6RTKgnpWjBfFD?p=preview)
 
 2. **События, взаимодействие с посетителем.**
     - Основы и тонкости работы с различными событиями для решения основных интерфейсных задач.

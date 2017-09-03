@@ -67,7 +67,7 @@
 
     // Выбрать все ссылки, следующие за заголовком h3#widget-title
     // на том же уровне вложенности
-    test('h3#widget-title ~ a', 2);
+    test('h3#widget-title ~ [href]', 2);
 
     // Выбрать ссылку внутри последнего элемента списка #messages
     test('#messages :last-child [href]', 1);
