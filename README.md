@@ -41,6 +41,7 @@
         - [homework-06](http://plnkr.co/edit/ElzDCxBcpjbnBbFz2uk4?p=preview)
         - [homework-07](http://plnkr.co/edit/0E7RGWxM9uhJsmxaQgOI?p=preview)
         - [homework-08](http://plnkr.co/edit/e7nV5hLRcUYF4ftq352A?p=preview)
+        - [homework-08](http://plnkr.co/edit/e7nV5hLRcUYF4ftq352A?p=preview)
             
 
 
@@ -56,6 +57,8 @@
     - Внутреннее устройство браузера, оптимальная организация страницы со скриптами.
     - Дерево DOM, особенности разработки в современных браузерах с отмирающей, но иногда нужной поддержкой старых.
     - Динамическая генерация интерфейса - методы DOM, их грамотное использование.
+    - Homeworks:
+        - [homework-09](http://plnkr.co/edit/OygONdvK7QqeOBVpyTYW?p=preview)
 
 2. **События, взаимодействие с посетителем.**
     - Основы и тонкости работы с различными событиями для решения основных интерфейсных задач.
