@@ -57,7 +57,7 @@
         let count = elem.getElementsByTagName('li').length;
 
         if (count) {
-            elem.firstChild.data = elem.firstChild.data.replace(/$/, ` [${count}]\n`);
+            elem.firstChild.data += ` [${count}]`;
         }
     }
 
