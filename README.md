@@ -33,16 +33,18 @@
             - [extra](http://plnkr.co/edit/esNdzf4IUs7bdakfQnn9?p=preview)
             
         - [homework-04](http://plnkr.co/edit/UeUrRx9tsJ47MhME1UED?p=preview)
+        
         - [homework-04 (old)](http://plnkr.co/edit/jtqzlylHCi0oFHeVpO99?p=preview)
             - [test of an exception](http://plnkr.co/edit/ptSoFFDS6vD3DVYCViNL?p=preview)
+            
         - [homework-05](http://plnkr.co/edit/ccXsuKZqxtfT3sPGP6nr?p=preview)
+        
         - [homework-05 (old)](http://plnkr.co/edit/5XwlxkoOQu2I0TTUP5pK?p=preview)
             - [Ladder & ArrowLadder](http://plnkr.co/edit/SR8sjGwJmuJ3f8ODk6eP?p=preview)
+            
         - [homework-06](http://plnkr.co/edit/ElzDCxBcpjbnBbFz2uk4?p=preview)
         - [homework-07](http://plnkr.co/edit/0E7RGWxM9uhJsmxaQgOI?p=preview)
-        - [homework-08](http://plnkr.co/edit/e7nV5hLRcUYF4ftq352A?p=preview)
-        - [homework-08](http://plnkr.co/edit/e7nV5hLRcUYF4ftq352A?p=preview)
-            
+        - [homework-08](http://plnkr.co/edit/e7nV5hLRcUYF4ftq352A?p=preview)            
 
 
 По окончанию первой части курса вы свободно пользуетесь языком JavaScript, с учётом его особенностей и новых возможностей стандарта ES-2015. Мы улучшим эти навыки в последующих частях курса.
@@ -62,6 +64,9 @@
             - [homework-09.01](http://plnkr.co/edit/OygONdvK7QqeOBVpyTYW?p=preview)
             - [homework-09.02](http://plnkr.co/edit/QuYJeOJJIHoanfeGnRn8?p=preview)
             - [homework-09.03](http://plnkr.co/edit/Rh6qH0X6RTKgnpWjBfFD?p=preview)
+            
+        - [homework-10.01 treeMaking](http://plnkr.co/edit/xBT3rxLbLwvOWqg6VAzR?p=preview)
+        - [homework-10.02 treeCount](http://plnkr.co/edit/Vz34nQoZ0awW9ncdlW1c?p=preview)
 
 2. **События, взаимодействие с посетителем.**
     - Основы и тонкости работы с различными событиями для решения основных интерфейсных задач.

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Vladimir Deminenko"/>
+    <meta name="date" content="07.09.2017" scheme="DD.MM.YYYY"/>
+</head>
+
+<body>
+<h3>homework-10.02 treeCount</h3>
+<!--https://learn.javascript.ru/task/tree-count-->
+<ul>
+    <li>Животные
+        <ul>
+            <li>Млекопитающие
+                <ul>
+                    <li>Коровы</li>
+                    <li>Ослы</li>
+                    <li>Собаки</li>
+                    <li>Тигры</li>
+                </ul>
+            </li>
+            <li>Другие
+                <ul>
+                    <li>Змеи</li>
+                    <li>Птицы</li>
+                    <li>Ящерицы</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Рыбы
+        <ul>
+            <li>Аквариумные
+                <ul>
+                    <li>Гуппи</li>
+                    <li>Скалярии</li>
+                </ul>
+
+            </li>
+            <li>Морские
+                <ul>
+                    <li>Морская форель</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    // .. ваш код ..
+
+    let elements = document.querySelectorAll('li');
+
+    for (let i = 0; i < elements.length; i++) {
+        let elem = elements[i];
+        let count = elem.getElementsByTagName('li').length;
+
+        if (count) {
+            elem.firstChild.data = elem.firstChild.data.replace(/$/, ` [${count}]\n`);
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
