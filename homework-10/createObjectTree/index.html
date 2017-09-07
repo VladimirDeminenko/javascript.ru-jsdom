@@ -74,10 +74,11 @@
 
             li.innerHTML = prop;
             ul.appendChild(li);
-            container.appendChild(ul);
 
             createTree(li, data[prop]);
         }
+
+        container.appendChild(ul);
     }
 
     function isEmpty(obj) {
