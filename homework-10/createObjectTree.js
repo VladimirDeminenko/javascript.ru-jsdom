@@ -1,47 +1,42 @@
-<!DOCTYPE HTML>
+/**
+ * @file createObjectTree.js
+ * @author Vladimir Deminenko
+ * @date 08.09.2017
+ */
 
-<head>
-    <meta charset="utf-8"/>
-    <meta name="author" content="Vladimir Deminenko"/>
-    <meta name="date" content="07.09.2017" scheme="DD.MM.YYYY"/>
-</head>
+'use strict';
 
-<body>
-<h3>homework-10.01 createObjectTree</h3>
-<!--https://learn.javascript.ru/task/create-object-tree-->
-
-<div id="tree"></div>
-
-<!-- Результат должен быть таким:
+/*
+Результат должен быть таким:
 <div id="tree">
-<ul>
-<li>Рыбы
-  <ul>
-    <li>Форель</li>
-    <li>Щука</li>
-  </ul>
-</li>
-<li>Деревья
-  <ul>
-    <li>Хвойные
-      <ul>
-        <li>Лиственница</li>
-        <li>Ель</li>
-      </ul>
-    </li>
-    <li>Цветковые
-      <ul>
-        <li>Берёза</li>
-        <li>Тополь</li>
-      </ul>
-    </li>
-  </ul>
-</li>
-</ul>
+    <ul>
+        <li>Рыбы
+            <ul>
+                <li>Форель</li>
+                <li>Щука</li>
+            </ul>
+        </li>
+        <li>Деревья
+            <ul>
+                <li>Хвойные
+                    <ul>
+                        <li>Лиственница</li>
+                        <li>Ель</li>
+                    </ul>
+                </li>
+                <li>Цветковые
+                    <ul>
+                        <li>Берёза</li>
+                        <li>Тополь</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>
--->
+*/
 
-<script>
+(function () {
     let data = {
         "Рыбы": {
             "Форель": {},
@@ -59,8 +54,6 @@
             }
         }
     };
-
-    /* ваш код */
 
     function createTree(container, data) {
         if (isEmpty(data)) {
@@ -90,8 +83,4 @@
     }
 
     createTree(document.getElementById('tree'), data);
-</script>
-
-</body>
-
-</html>
+})();

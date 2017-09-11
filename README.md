@@ -65,8 +65,7 @@
             - [homework-09.02](http://plnkr.co/edit/QuYJeOJJIHoanfeGnRn8?p=preview)
             - [homework-09.03](http://plnkr.co/edit/Rh6qH0X6RTKgnpWjBfFD?p=preview)
             
-        - [homework-10.01 treeMaking](http://plnkr.co/edit/xBT3rxLbLwvOWqg6VAzR?p=preview)
-        - [homework-10.02 treeCount](http://plnkr.co/edit/Vz34nQoZ0awW9ncdlW1c?p=preview)
+        - [homework-10](http://plnkr.co/edit/K3Iq4pbbnSS8F5Irufr8?p=preview)
 
 2. **События, взаимодействие с посетителем.**
     - Основы и тонкости работы с различными событиями для решения основных интерфейсных задач.
